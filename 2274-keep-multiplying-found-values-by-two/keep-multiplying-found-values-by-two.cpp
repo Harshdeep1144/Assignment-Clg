@@ -1,10 +1,10 @@
 class Solution {
 public:
     int findFinalValue(vector<int>& nums, int original) {
-        sort(nums.begin(), nums.end());
-
-        for(int &num : nums){
-            if(num == original) original *= 2;
+        
+        for (int& num : nums) {
+            if (find(nums.begin(), nums.end(), original) != nums.end())
+                original *= 2;
         }
 
         return original;
